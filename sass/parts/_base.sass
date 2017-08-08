@@ -18,12 +18,31 @@ header
 
 main
   padding: 1em
-  background: #35bb33
+  background: rgba(53, 187, 51, .5)
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: repeat(auto, 1fr)
+  div
+    background: #333
+    +cush(10px, 10px)
+  #main-content-1
+    order: 3
+  #main-content-2
+    order: 1
+  #main-content-3
+    order: 2
+  #main-content-4
+    order: 4
+    display: grid
+    grid-template-columns: repeat(2, 2fr)
+    grid-template-rows: repeat(auto, 2fr)
+    div
+      border: thin solid #fff
 
 aside
   display: grid
   padding: 1em
-  background: #721
+  background: #240904
   align-content: space-around
   img
     width: 80%
@@ -32,8 +51,15 @@ aside
 
 
 footer
-  background: #42b
+  background: rgba(7, 9, 62, 1)
   text-align: center
+  font-size: 2em
+  display: grid
+  grid-template-columns: 11fr 1fr
+  .copy
+    align-self: center
+  a > img
+    width: 80px
 
 
 .cush
@@ -42,20 +68,22 @@ footer
 p
   font-size: 1.5em
 
-@media (min-width: 769px)
+@media (min-width: 994px)
   header
     grid-column: 1 / 12
     grid-row: 1 / 2
 
   main
     grid-column: 1 / 8
-    grid-row: 2 / 3
+    grid-row: 2 / 5
+    align-self: start
     p
       text-indent: 1em
 
   aside
     grid-column: 8 / 12
-    grid-row: 2 / 3
+    grid-row: 2 / 5
+    align-self: start
     #quickScope
       width: 90%
       justify-self: center

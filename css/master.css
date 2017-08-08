@@ -30,70 +30,124 @@ header {
 /* line 19, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
 main {
   padding: 1em;
-  background: #35bb33;
+  background: rgba(53, 187, 51, 0.5);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto, 1fr);
 }
 
-/* line 23, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
-aside {
-  display: grid;
-  padding: 1em;
-  background: #721;
-  align-content: space-around;
+/* line 25, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main div {
+  background: #333;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 /* line 28, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main #main-content-1 {
+  order: 3;
+}
+
+/* line 30, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main #main-content-2 {
+  order: 1;
+}
+
+/* line 32, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main #main-content-3 {
+  order: 2;
+}
+
+/* line 34, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main #main-content-4 {
+  order: 4;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(auto, 2fr);
+}
+
+/* line 39, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+main #main-content-4 div {
+  border: thin solid #fff;
+}
+
+/* line 42, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+aside {
+  display: grid;
+  padding: 1em;
+  background: #240904;
+  align-content: space-around;
+}
+
+/* line 47, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
 aside img {
   width: 80%;
   justify-self: center;
   margin: 10px 0;
 }
 
-/* line 34, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+/* line 53, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
 footer {
-  background: #42b;
+  background: #07093e;
   text-align: center;
+  font-size: 2em;
+  display: grid;
+  grid-template-columns: 11fr 1fr;
 }
 
-/* line 39, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+/* line 59, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+footer .copy {
+  align-self: center;
+}
+
+/* line 61, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+footer a > img {
+  width: 80px;
+}
+
+/* line 65, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
 .cush {
   padding: 1em;
 }
 
-/* line 42, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+/* line 68, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
 p {
   font-size: 1.5em;
 }
 
-@media (min-width: 769px) {
-  /* line 46, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+@media (min-width: 994px) {
+  /* line 72, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   header {
     grid-column: 1 / 12;
     grid-row: 1 / 2;
   }
-  /* line 50, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 76, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   main {
     grid-column: 1 / 8;
-    grid-row: 2 / 3;
+    grid-row: 2 / 5;
+    align-self: start;
   }
-  /* line 53, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 80, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   main p {
     text-indent: 1em;
   }
-  /* line 56, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 83, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   aside {
     grid-column: 8 / 12;
-    grid-row: 2 / 3;
+    grid-row: 2 / 5;
+    align-self: start;
   }
-  /* line 59, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 87, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   aside #quickScope {
     width: 90%;
     justify-self: center;
   }
-  /* line 62, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 90, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   aside p {
     text-align: center;
   }
-  /* line 65, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
+  /* line 93, C:/wamp64/www/cssgrid1/sass/parts/_base.sass */
   footer {
     grid-column: 1 / 12;
   }
