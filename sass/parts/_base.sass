@@ -9,86 +9,44 @@ body
 
 .grid
   display: grid
-  grid-template: repeat(12, 1fr) / repeat(auto, 1fr)
+  grid-template-columns: 6fr 6fr
+  grid-template-rows: auto
   grid-gap: 1em
-
-header
-  background: #555
-  text-align: center
-
-main
-  padding: 1em
-  background: rgba(53, 187, 51, .5)
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: repeat(auto, 1fr)
-  div
-    background: #333
-    +cush(10px, 10px)
-  #main-content-1
-    order: 3
-  #main-content-2
-    order: 1
-  #main-content-3
-    order: 2
-  #main-content-4
-    order: 4
-    display: grid
-    grid-template-columns: repeat(2, 2fr)
-    grid-template-rows: repeat(auto, 2fr)
-    div
-      border: thin solid #fff
-
-aside
-  display: grid
-  padding: 1em
-  background: #240904
-  align-content: space-around
-  img
-    width: 80%
-    justify-self: center
-    margin: 10px 0
-
-
-footer
-  background: rgba(7, 9, 62, 1)
-  text-align: center
-  font-size: 2em
-  display: grid
-  grid-template-columns: 11fr 1fr
-  .copy
-    align-self: center
-  a > img
-    width: 80px
-
-
-.cush
-  padding: 1em
-
-p
-  font-size: 1.5em
-
-@media (min-width: 994px)
+  grid-template-areas: "header header" "aside aside" "main main" "footer footer"
   header
-    grid-column: 1 / 12
-    grid-row: 1 / 2
-
+    grid-area: header
+    background: #123456
   main
-    grid-column: 1 / 8
-    grid-row: 2 / 5
-    align-self: start
-    p
-      text-indent: 1em
-
+    grid-area: main
+    background: #654321
   aside
-    grid-column: 8 / 12
-    grid-row: 2 / 5
-    align-self: start
-    #quickScope
-      width: 90%
-      justify-self: center
-    p
-      text-align: center
-
+    display: grid
+    grid-template: 1fr / auto
+    grid-area: aside
+    grid-gap: 1em
+    justify-items: center
+    background: #51eb08
+    a
+      width: 80%
   footer
-    grid-column: 1 / 12
+    display: grid
+    grid-template: 10fr 2fr / 1fr
+    grid-area: footer
+    background: #321cba
+    .copy
+      grid-column: 1 / 10
+      justify-self: center
+      align-self: center
+    a
+      grid-column: 10 / 12
+      width: 50px
+      height: 50px
+      img
+        width: 100%
+        height: auto
+
+  @media (min-width: 601px) and (max-width: 949px)
+    grid-template-areas: "header header" "aside main" "footer footer"
+
+  @media (min-width: 950px)
+    grid-template-areas: "header header" "main aside" "footer footer"
