@@ -13,27 +13,13 @@ body
   grid-template-rows: auto
   grid-gap: 1em
   grid-template-areas: "header header" "aside aside" "main main" "footer footer"
-  header
-    grid-area: header
-    background: #123456
-  main
-    grid-area: main
-    background: #654321
-  aside
-    display: grid
-    grid-template: 1fr / auto
-    grid-area: aside
-    grid-gap: 1em
-    justify-items: center
-    background: #51eb08
-    a
-      width: 80%
+  align-items: start
   footer
     display: grid
     grid-template: 10fr 2fr / 1fr
     grid-area: footer
     background: #321cba
-    .copy
+    h3
       grid-column: 1 / 10
       justify-self: center
       align-self: center
@@ -45,8 +31,12 @@ body
         width: 100%
         height: auto
 
-  @media (min-width: 601px) and (max-width: 949px)
+@media (min-width: 700px) and (max-width: 999px)
+  .grid
+    grid-template-columns: 1fr 1fr
     grid-template-areas: "header header" "aside main" "footer footer"
 
-  @media (min-width: 950px)
+@media (min-width: 1000px)
+  .grid
+    grid-template-columns: 1fr 1fr
     grid-template-areas: "header header" "main aside" "footer footer"
